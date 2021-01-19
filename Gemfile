@@ -68,3 +68,5 @@ gem "refile-mini_magick"
 # bootstrapの導入
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
+# fontawesomeの導入
+gem 'font-awesome-sass'
