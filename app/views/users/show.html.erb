@@ -20,7 +20,10 @@
 			      </tr>
 			    </tbody>
 			  </table>
-			  <%= link_to "プロフを編集", edit_user_path(@user),  class: "btn btn-secondary col-xs-12" %>
+			  
+			  <%= link_to edit_user_path(@user),  class: "btn btn-secondary col-xs-12" do %>
+			  <i class="fa fa-cog" aria-hidden="true"></i>
+			  <% end %>
 
 			<h2>New book</h2>
 			<%= form_for(@book) do |f| %>
