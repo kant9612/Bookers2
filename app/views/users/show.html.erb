@@ -1,9 +1,41 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-3">
+
     	 <!--  ここに部分テンプレ　-->
-      <%= render 'users/list', users: @users %>
-      <!--ここまで-->
+			<h1>User info</h1>
+			  <table class="table">
+			    <tbody>
+			      <!--ここに画像挿入-->
+			      <tr>
+			        <!--ログインしている人の名前-->
+			        <th>name</th>
+			        <td><%= @user.name %></td>
+			      </tr>
+			        <tr>
+			          <!-- ログインしている人の紹介文-->
+			        <th>introduction</th>
+			      </tr>
+			    </tbody>
+			  </table>
+			  <%= link_to "プロフを編集", edit_user_path(@user),  class: "btn btn-secondary col-xs-12" %>
+
+			<h2>New book</h2>
+			<%= form_for(@book) do |f| %>
+			  <label>Title</label>
+			  <br>
+			  <%= f.text_field :title, class: "col-xs-12 book_title" %>
+			  <br>
+			  <label>opinion</label>
+			  <br>
+			  <%= f.text_area :body, class: "col-xs-12 book_body" %>
+			  <br><br><br>
+			  <div class="actions">
+			  <%= f.submit 'Create Book', class: "btn btn-primary col-xs-12" %>
+			  </div>
+			<% end %>
+			<!--ここまで-->
+
 		</div>
 		<div class="col-lg-9">
 		  <h2>Books</h2>
