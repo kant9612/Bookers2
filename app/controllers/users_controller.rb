@@ -9,12 +9,13 @@ class UsersController < ApplicationController
 
    def show
      @user = User.find(params[:id])
+     @users = User.all
 		 @books = @user.books.all
 		 @book = Book.new
    end
 
    def edit
-     @user = User.find(params[:id])
+     @user = current_user
      if @user.id !=current_user.id
        redirect_to user_path(@current_user.id)
      end
