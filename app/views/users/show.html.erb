@@ -12,7 +12,7 @@
 <% end %>
 
   <div class="row">
-    <div class="col-lg-3">
+    <div class="col-md-3">
 
     	 <!--  ここに部分テンプレ　-->
 			<h1>User info</h1>
@@ -33,10 +33,12 @@
 			    </tbody>
 			  </table>
 
+			<div class="row">
 			  <%= link_to edit_user_path(@user),  class: "btn btn-outline-secondary btn-block col-xs-12" do %>
 			  <i class="fa fa-user-cog" aria-hidden="true"></i>
 			  <% end %>
-
+			</div>
+<br>
 			<h2>New book</h2>
 			<%= form_for(@book) do |f| %>
 			  <label>Title</label>
@@ -54,14 +56,14 @@
 			<!--ここまで-->
 
 		</div>
-		<div class="col-lg-9">
+		<div class="col-md-8 offset-md-1">
 		  <h2>Books</h2>
 		    <table class="table">
 		      <thead>
 		        <tr align="left">
 		          <th></th>
-		          <th>title</th>
-		          <th>opinion</th>
+		          <th>Title</th>
+		          <th>Opinion</th>
 		          <th colspan="3"></th>
 		        </tr>
 		    	</thead>
@@ -78,4 +80,8 @@
 	  </div>
   </div>
 </div>
-<p class="text-center">CopyRight Infratop.inc</p>
+<footer>
+  <div class="container mt-5">
+    <p class="text-center">CopyRight Infratop.inc</p>
+  </div>
+</footer>
