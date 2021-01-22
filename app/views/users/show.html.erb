@@ -1,3 +1,4 @@
+<%= flash[:notice] %>
 <div class="container">
 <% if @book.errors.any? %>
   <h3><%= @book.errors.count %> errors prohibited this obj from being saved:</h3>
@@ -9,9 +10,10 @@
     </ul>
   </div>
 <% end %>
+
   <div class="row">
     <div class="col-lg-3">
-			<%= flash[:notice] %>
+
     	 <!--  ここに部分テンプレ　-->
 			<h1>User info</h1>
 			  <table class="table">
