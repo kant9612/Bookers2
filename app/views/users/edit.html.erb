@@ -10,16 +10,17 @@
   </div>
 <% end %>
   <div class="row">
-    <div class="col-xs-3">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       <h2>User info</h2>
         <%= form_with model: @user, local: true do |f| %>
-        <label>Name</label><br><%= f.text_field :name, class: "name" %><br>
-        <label>Image</label><br><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%><br>
-        <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-image" %>
-        <br>
-        <label>Introduction</label><br><%= f.text_area :introduction, class: "introduction" %>
-        <br><%= f.submit "update user", class: "edit_user#{current_user.id}" %>
+        <div class="form-group"><label>Name</label><br><%= f.text_field :name, class: "name col" %></div>
+        <div class="form-group"><label>Image</label><br>
+        <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-image" %></div>
+        <div class="form-group"><label>Introduction</label></div><%= f.text_area :introduction, class: "introduction col" %>
+        <div class="form-group"><%= f.submit "Update User", class: "edit_user#{current_user.id} btn btn-secondary" %></div>
         <% end %>
     </div>
   </div>
 </div>
+<br><br>
+<p class="text-center">CopyRight Infratop.inc</p>

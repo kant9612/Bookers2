@@ -10,27 +10,23 @@
   </div>
 <% end %>
   <div class="row">
-    <div class="col-lg-6 col-lg-offset-3">
-      <h2>Editing book</h2>
-      <%= form_for(@book) do |f| %>
-        <label>Title</label>
-        <br>
-        <%= f.text_field :title, class: "col-xs-12" %>
-        <br>
-        <label>opinion</label>
-        <br>
-        <%= f.text_area :body, class: "col-xs-12" %>
-        <br>
-        <br>
-        <br>
-        <div class="actions">
-        <%= f.submit 'Update Book', class: "btn btn-primary col-xs-12" %>
-        </div>
-        <br>
-        <td><%= link_to "Show", book_path %></td>
-        <td>|</td>
-        <td><%= link_to "back", books_path %></td>
-      <% end %>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <h1>Editing book</h1>
+      <%= form_with model: @book, local: true do |f| %>
+          <div class="form-group"><label>Title</label><br>
+          <%= f.text_field :title, class: "col" %></div>
+          <div class="form-group"><label>opinion</label><br>
+          <%= f.text_area :body, class: "col" %></div>
+          <div class="actions">
+          <%= f.submit 'Update Book', class: "btn btn-success col-xs-12" %>
+          </div>
+          <br>
+          <td><%= link_to "Show", book_path %></td>
+          <td>|</td>
+          <td><%= link_to "back", books_path %></td>
+        <% end %>
     </div>
   </div>
 </div>
+<br><br>
+<p class="text-center">CopyRight Infratop.inc</p>

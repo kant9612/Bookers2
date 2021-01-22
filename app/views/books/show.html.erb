@@ -18,7 +18,7 @@
         <table class="table">
           <tbody>
             <!--ここに画像挿入-->
-            <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+            <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg"%>
             <tr>
               <!--ログインしている人の名前-->
               <th>name</th>
@@ -67,8 +67,8 @@
 		    	</thead>
 		    	<tbody>
 						<tr>
-				    	<!--%= attachment_image_tag @bookdetail.user, :profile_image, :fill, 40, 40, format:'jpeg', fallback: "no_image.jpg" %></td>-->
-				     	<td><%= link_to @bookdetail.user.name, user_path(@bookdetail.user.id) %></td>
+				    	<td><%= attachment_image_tag @bookdetail.user, :profile_image, :fill, 100, 100, format:'jpeg', fallback: "no_image.jpg" %>
+				     	<br><%= link_to @bookdetail.user.name, user_path(@bookdetail.user.id) %></td>
 				      <td><%= link_to @bookdetail.title, book_path(@bookdetail.id) %></td>
 				      <td><%= @bookdetail.body %></td>
 				      <% if @bookdetail.user_id == current_user.id %>
@@ -81,3 +81,5 @@
 		</div>
   </div>
 </div>
+<br><br>
+<p class="text-center">CopyRight Infratop.inc</p>
