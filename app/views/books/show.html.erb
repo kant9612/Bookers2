@@ -32,7 +32,7 @@
           </tbody>
         </table>
 
-        <%= link_to edit_user_path(@user),  class: "btn btn-secondary col-xs-12" do %>
+        <%= link_to edit_user_path(@user),  class: "btn btn-outline-secondary btn-block col-xs-12" do %>
 			  <i class="fa fa-user-cog" aria-hidden="true"></i>
 			  <% end %>
 
@@ -40,14 +40,14 @@
       <%= form_for(@book) do |f| %>
         <label>Title</label>
         <br>
-        <%= f.text_field :title, class: "col-xs-12 book_title" %>
+        <%= f.text_field :title, class: "col book_title" %>
         <br>
         <label>opinion</label>
         <br>
-        <%= f.text_area :body, class: "col-xs-12 book_body" %>
+        <%= f.text_area :body, class: "col book_body" %>
         <br><br><br>
         <div class="actions">
-        <%= f.submit 'Create Book', class: "btn btn-primary col-xs-12" %>
+        <%= f.submit 'Create Book', class: "btn btn-success col-xs-12" %>
         </div>
       <% end %>
       <!--ここまで-->
