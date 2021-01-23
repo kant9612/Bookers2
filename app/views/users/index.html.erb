@@ -32,7 +32,7 @@
 
 			<div class="row">
 			  <%= link_to edit_user_path(@user),  class: "btn btn-outline-secondary btn-block col-xs-12" do %>
-			  <i class="fa fa-user-cog" aria-hidden="true"></i>
+			  <i class="fas fa-user-cog" aria-hidden="true"></i>
 			  <% end %>
 			</div>
 <br>
@@ -68,7 +68,7 @@
 					  <tr>
 						  <td><%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></td>
 					      <td><%= user.name %></td>
-					      <td><%= link_to 'show', user_path(user.id), class: "user_#{user.id}" %></td>
+					      <td><%= link_to 'Show', user_path(user.id), class: "user_#{user.id}" %></td>
 				     </tr>
 		        <% end %>
 		    	</tbody>
