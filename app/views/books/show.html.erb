@@ -60,7 +60,7 @@
 		    	<tbody>
 						<tr>
 				    	<td><%= attachment_image_tag @bookdetail.user, :profile_image, :fill, 100, 100, format:'jpeg', fallback: "no_image.jpg" %>
-				     	<br><%= link_to @bookdetail.user.name, user_path(@bookdetail.user.id) %></td>
+				     	<td><%= link_to @bookdetail.user.name, user_path(@bookdetail.user.id) %></td>
 				      <td><%= link_to @bookdetail.title, book_path(@bookdetail.id) %></td>
 				      <td><%= @bookdetail.body %></td>
 				      <% if @bookdetail.user_id == current_user.id %>
