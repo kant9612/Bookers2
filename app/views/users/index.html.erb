@@ -11,73 +11,14 @@
 <% end %>
   <div class="row">
     <div class="col-md-3">
-			<!--  ここに部分テンプレ　-->
 			<h1>User info</h1>
-			  <table class="table">
-			    <tbody>
-			      <!--ここに画像挿入-->
-			      <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg"%>
-			      <tr>
-			        <!--ログインしている人の名前-->
-			        <th>name</th>
-			        <td><strong><%= @user.name %></strong></td>
-			      </tr>
-			        <tr>
-			          <!-- ログインしている人の紹介文-->
-			        <th>introduction</th>
-			        <td><%= @user.introduction %></td>
-			      </tr>
-			    </tbody>
-			  </table>
-
-			<div class="row">
-			  <%= link_to edit_user_path(@user),  class: "btn btn-outline-secondary btn-block col-xs-12" do %>
-			  <i class="fas fa-user-cog" aria-hidden="true"></i>
-			  <% end %>
-			</div>
-<br>
+			<%= render 'info', user: current_user %>
 			<h2>New book</h2>
-			<%= form_for(@book) do |f| %>
-			  <label>Title</label>
-			  <br>
-			  <%= f.text_field :title, class: "col book_title" %>
-			  <br>
-			  <label>Opinion</label>
-			  <br>
-			  <%= f.text_area :body, class: "col book_body" %>
-			  <br><br><br>
-			  <div class="actions">
-			  <%= f.submit 'Create Book', class: "btn btn-success col-xs-12" %>
-			  </div>
-			<% end %>
-			<!--ここまで-->
+			<%= render 'books/form', book: @book %>
 		</div>
 		<div class="col-md-8 offset-md-1">
 		  <h2>Users</h2>
-		    <table class="table">
-		      <thead>
-		        <tr align="left">
-		          <th>image</th>
-		          <th>name</th>
-		          <th></th>
-		          <th colspan="3"></th>
-		        </tr>
-		    	</thead>
-		    	<tbody>
-					  <% @users.each do |user| %>
-					  <tr>
-						  <td><%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></td>
-					      <td><%= user.name %></td>
-					      <td><%= link_to 'Show', user_path(user.id), class: "user_#{user.id}" %></td>
-				     </tr>
-		        <% end %>
-		    	</tbody>
-		    </table>
+		  <%= render 'index', users: @users %>
 		</div>
   </div>
 </div>
-<footer>
-  <div class="container mt-5">
-    <p class="text-center">CopyRight Infratop.inc</p>
-  </div>
-</footer>
