@@ -1,2 +1,2 @@
-<!-- #likes_buttons_ %= @blog.id % この部分のHTMLだけ、renderで部分的に更新するという処理 -->
-$(".favorite-btn_<%= @book.id %>").html("<%= j(render 'favorites/favorite-btn', book: @book) %>");
+<!-- ()内部分のHTMLだけ、renderで部分的に(部分テンプレートを呼び出すときのように)更新する -->
+$("#book_<%= @book.id %> .favorite-btn").html("<%= j(render 'favorites/favorite-btn', book: @book) %>");
